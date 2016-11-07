@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "210896954330",
+    "firebase_url": "https://missedcall-c258c.firebaseio.com",
+    "project_id": "missedcall-c258c",
+    "storage_bucket": "missedcall-c258c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210896954330:android:5bbea38f340110a7",
+        "android_client_info": {
+          "package_name": "com.example.chiragmahapatra.alarm_manager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "210896954330-j49jmfjsovk9saba8o77ppu5me0hm1a2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjoHZwqE-ETQ0XRS2RKl1Rx-qJq-8vd_E"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
