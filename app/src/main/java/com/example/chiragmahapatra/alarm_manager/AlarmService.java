@@ -1,11 +1,16 @@
 package com.example.chiragmahapatra.alarm_manager;
 
+import android.Manifest;
 import android.app.IntentService;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.provider.CallLog;
-import android.util.Log;
 import android.provider.Settings.Secure;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 
@@ -52,6 +57,7 @@ class Phone {
 }
 
 public class AlarmService extends IntentService {
+
     public AlarmService() {
         super("AlarmService");
     }
@@ -61,9 +67,9 @@ public class AlarmService extends IntentService {
         // Do the task here
         String deviceId = Secure.getString(this.getContentResolver(),
                 Secure.ANDROID_ID);
-        ArrayList<Phone> callDetails = getCallDetailsFromCallLog();
-        Firebase.setAndroidContext(this);
         try {
+            ArrayList<Phone> callDetails = getCallDetailsFromCallLog();
+            Firebase.setAndroidContext(this);
             Firebase myFirebaseRef = new Firebase("https://missedcall-c258c.firebaseio.com/");
             myFirebaseRef.child(deviceId).setValue(callDetails);
             Log.i("AlarmService", callDetails.toString());
@@ -107,5 +113,6 @@ public class AlarmService extends IntentService {
         }
         managedCursor.close();
         return phones;
+
     }
 }
